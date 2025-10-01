@@ -51,7 +51,7 @@ export function MainNav() {
                 <Package className="h-5 w-5 text-white" />
               </div>
               <span className="font-bold text-xl bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-                MotoRepuestos
+                MotoRepuestos73
               </span>
             </Link>
             <div className="flex gap-1">
