@@ -6,7 +6,7 @@ import type { VentaCompleta } from "@/lib/types"
 import { format } from "date-fns"
 import { es } from "date-fns/locale"
 import { ShoppingCart, ChevronDown, ChevronRight } from "lucide-react"
-import { useState } from "react"
+import { useState, Fragment } from "react"
 import { Button } from "@/components/ui/button"
 import { formatearPrecio } from "@/lib/utils"
 
@@ -76,8 +76,8 @@ export function VentasTable({ ventas }: VentasTableProps) {
             const totalUnidades = venta.ventas_detalle?.reduce((sum, detalle) => sum + detalle.cantidad, 0) || 0
 
             return (
-              <>
-                <TableRow key={venta.id} className="cursor-pointer hover:bg-muted/30 transition-colors">
+              <Fragment key={venta.id}>
+                <TableRow className="cursor-pointer hover:bg-muted/30 transition-colors">
                   <TableCell>
                     <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => toggleExpansion(venta.id)}>
                       {estaExpandida ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
@@ -127,7 +127,7 @@ export function VentasTable({ ventas }: VentasTableProps) {
                     </TableCell>
                   </TableRow>
                 )}
-              </>
+              </Fragment>
             )
           })}
         </TableBody>

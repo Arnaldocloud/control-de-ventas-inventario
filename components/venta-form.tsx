@@ -156,7 +156,11 @@ export function VentaForm({ productos, tasaDolar }: VentaFormProps) {
     const supabase = createClient()
 
     try {
-      const metodoPagoFinal = formData.metodo_pago === "Efectivo" ? `Efectivo ${formData.moneda}` : formData.metodo_pago
+      // Construir el método de pago según el constraint de la BD
+      let metodoPagoFinal = formData.metodo_pago
+      if (formData.metodo_pago === "Efectivo") {
+        metodoPagoFinal = formData.moneda === "USD" ? "Efectivo USD" : "Efectivo BS"
+      }
 
       const { data: ventaData, error: ventaError } = await supabase
         .from("ventas")
