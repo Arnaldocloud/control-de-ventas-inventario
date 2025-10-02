@@ -1,7 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
 import { Badge } from "@/components/ui/badge"
-import { format } from "date-fns"
-import { es } from "date-fns/locale"
 import { formatearPrecio } from "@/lib/utils"
 
 export async function VentasRecientes() {
@@ -28,7 +26,7 @@ export async function VentasRecientes() {
       {ventas.map((venta) => {
         const cantidadProductos = venta.ventas_detalle?.length || 0
         const totalUnidades =
-          venta.ventas_detalle?.reduce((sum: number, detalle: any) => sum + detalle.cantidad, 0) || 0
+          venta.ventas_detalle?.reduce((sum: number, detalle: { cantidad: number }) => sum + detalle.cantidad, 0) || 0
 
         return (
           <div key={venta.id} className="flex items-center justify-between p-3 border rounded-lg">
@@ -37,8 +35,15 @@ export async function VentasRecientes() {
                 {cantidadProductos} producto{cantidadProductos > 1 ? "s" : ""}
               </div>
               <div className="text-sm text-muted-foreground">
-                {format(new Date(venta.creado_en), "dd/MM/yyyy HH:mm", { locale: es })} - {totalUnidades} unidad
-                {totalUnidades > 1 ? "es" : ""}
+                {new Date(venta.creado_en).toLocaleString("es-VE", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: true,
+                })}{" "}
+                - {totalUnidades} unidad{totalUnidades > 1 ? "es" : ""}
               </div>
             </div>
             <div className="flex items-center gap-3">

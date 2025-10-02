@@ -15,7 +15,7 @@ export interface Venta {
   id: string
   total: number
   moneda: "BS" | "USD"
-  metodo_pago: "Efectivo" | "Punto" | "Pago Móvil" | "Transferencia" | "Mixto"
+  metodo_pago: "Efectivo" | "Efectivo BS" | "Efectivo USD" | "Punto" | "Pago Móvil" | "Transferencia" | "Mixto"
   tasa_dolar_momento: number | null
   creado_en: string
 }

@@ -3,8 +3,6 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import type { VentaCompleta } from "@/lib/types"
-import { format } from "date-fns"
-import { es } from "date-fns/locale"
 import { ShoppingCart, ChevronDown, ChevronRight } from "lucide-react"
 import { useState, Fragment } from "react"
 import { Button } from "@/components/ui/button"
@@ -84,7 +82,14 @@ export function VentasTable({ ventas }: VentasTableProps) {
                     </Button>
                   </TableCell>
                   <TableCell className="text-sm">
-                    {format(new Date(venta.creado_en), "dd/MM/yyyy HH:mm", { locale: es })}
+                    {new Date(venta.creado_en).toLocaleString("es-VE", {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: true,
+                    })}
                   </TableCell>
                   <TableCell>
                     <div className="font-medium">

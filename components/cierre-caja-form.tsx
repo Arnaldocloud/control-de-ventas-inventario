@@ -40,6 +40,7 @@ export function CierreCajaForm({ cajaActiva }: CierreCajaFormProps) {
 
   useEffect(() => {
     calcularTotales()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const calcularTotales = async () => {
@@ -64,12 +65,11 @@ export function CierreCajaForm({ cajaActiva }: CierreCajaFormProps) {
       ventas?.forEach((venta) => {
         const total = venta.total || 0
 
-        if (venta.metodo_pago === "Efectivo") {
-          if (venta.moneda === "BS") {
-            efectivo_bs += total
-          } else {
-            efectivo_usd += total
-          }
+        // Verificar si es efectivo (puede ser "Efectivo", "Efectivo BS", o "Efectivo USD")
+        if (venta.metodo_pago === "Efectivo BS" || (venta.metodo_pago === "Efectivo" && venta.moneda === "BS")) {
+          efectivo_bs += total
+        } else if (venta.metodo_pago === "Efectivo USD" || (venta.metodo_pago === "Efectivo" && venta.moneda === "USD")) {
+          efectivo_usd += total
         } else if (venta.metodo_pago === "Punto") {
           punto += total
         } else if (venta.metodo_pago === "Pago Móvil") {
