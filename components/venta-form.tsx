@@ -72,7 +72,9 @@ export function VentaForm({ productos, tasaDolar }: VentaFormProps) {
       const producto = productos.find((p) => p.id === item.producto_id)
       if (!producto) return item
 
-      const nuevoPrecio = nuevaMoneda === "BS" ? producto.precio_bs || 0 : producto.precio_usd || 0
+      // Siempre tomamos el precio base en USD y convertimos según sea necesario
+      const precioUSD = producto.precio_usd || 0
+      const nuevoPrecio = nuevaMoneda === "BS" ? precioUSD * tasaDolar : precioUSD
       const nuevoSubtotal = nuevoPrecio * item.cantidad
 
       return {
@@ -81,6 +83,11 @@ export function VentaForm({ productos, tasaDolar }: VentaFormProps) {
         subtotal: nuevoSubtotal,
       }
     })
+  }
+
+  // Función para obtener el precio en la moneda actual
+  const obtenerPrecioEnMoneda = (precioUSD: number) => {
+    return formData.moneda === "BS" ? precioUSD * tasaDolar : precioUSD
   }
 
   const agregarProducto = () => {
@@ -118,7 +125,7 @@ export function VentaForm({ productos, tasaDolar }: VentaFormProps) {
     }
 
     const precioUSD = producto.precio_usd || 0
-    const precio = formData.moneda === "BS" ? precioUSD * tasaDolar : precioUSD
+    const precio = obtenerPrecioEnMoneda(precioUSD)
     const subtotal = precio * cantidad
 
     setItems([

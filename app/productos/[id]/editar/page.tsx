@@ -7,7 +7,14 @@ export default async function EditarProductoPage({ params }: { params: Promise<{
   const { id } = await params
   const supabase = await createClient()
 
-  const { data: producto, error } = await supabase.from("productos").select("*").eq("id", id).single()
+  // Obtener el producto y la tasa actual del dólar en paralelo
+  const [
+    { data: producto, error },
+    { data: config }
+  ] = await Promise.all([
+    supabase.from("productos").select("*").eq("id", id).single(),
+    supabase.from("configuracion").select("tasa_dolar").single()
+  ])
 
   if (error || !producto) {
     notFound()
@@ -21,7 +28,10 @@ export default async function EditarProductoPage({ params }: { params: Promise<{
           <CardDescription>Actualiza la información del repuesto</CardDescription>
         </CardHeader>
         <CardContent>
-          <ProductoForm producto={producto} />
+          <ProductoForm 
+            producto={producto} 
+            tasaDolar={config?.tasa_dolar || producto.tasa_dolar_momento || 36.5} 
+          />
         </CardContent>
       </Card>
     </div>

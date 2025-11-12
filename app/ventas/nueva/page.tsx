@@ -2,6 +2,10 @@ import { createClient } from "@/lib/supabase/server"
 import { VentaForm } from "@/components/venta-form"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
+// IMPORTANTE: Deshabilitar caché
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 export default async function NuevaVentaPage() {
   const supabase = await createClient()
 
@@ -16,7 +20,14 @@ export default async function NuevaVentaPage() {
     console.log("[v0] Primer producto:", productos[0])
   }
 
-  const { data: config, error: configError } = await supabase.from("configuracion").select("*").single()
+  // Obtener configuración (primer registro más reciente)
+  const { data: configs, error: configError } = await supabase
+    .from("configuracion")
+    .select("*")
+    .order("actualizado_en", { ascending: false })
+    .limit(1)
+
+  const config = configs && configs.length > 0 ? configs[0] : null
 
   console.log("[v0] Configuración cargada:", config)
   console.log("[v0] Error al cargar configuración:", configError)

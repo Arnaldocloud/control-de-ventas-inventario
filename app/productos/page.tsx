@@ -4,10 +4,21 @@ import { Button } from "@/components/ui/button"
 import { Plus, Package } from "lucide-react"
 import Link from "next/link"
 
+// IMPORTANTE: Deshabilitar caché
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 export default async function ProductosPage() {
   const supabase = await createClient()
 
-  const { data: config } = await supabase.from("configuracion").select("*").single()
+  // Obtener configuración (primer registro más reciente)
+  const { data: configs } = await supabase
+    .from("configuracion")
+    .select("*")
+    .order("actualizado_en", { ascending: false })
+    .limit(1)
+
+  const config = configs && configs.length > 0 ? configs[0] : null
 
   const { data: productos, error } = await supabase.from("productos").select("*").order("nombre", { ascending: true })
 

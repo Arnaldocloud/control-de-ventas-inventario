@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { LayoutDashboard, Package, ShoppingCart, Settings, Wallet } from "lucide-react"
+import { LayoutDashboard, Package, ShoppingCart, Settings, Wallet, Users, FolderTree, Truck, ShoppingBag, BarChart3 } from "lucide-react"
 
 export function MainNav() {
   const pathname = usePathname()
@@ -22,10 +22,40 @@ export function MainNav() {
       active: pathname?.startsWith("/productos"),
     },
     {
+      href: "/categorias",
+      label: "Categorías",
+      icon: FolderTree,
+      active: pathname?.startsWith("/categorias"),
+    },
+    {
       href: "/ventas",
       label: "Ventas",
       icon: ShoppingCart,
       active: pathname?.startsWith("/ventas"),
+    },
+    {
+      href: "/clientes",
+      label: "Clientes",
+      icon: Users,
+      active: pathname?.startsWith("/clientes"),
+    },
+    {
+      href: "/proveedores",
+      label: "Proveedores",
+      icon: Truck,
+      active: pathname?.startsWith("/proveedores"),
+    },
+    {
+      href: "/compras",
+      label: "Compras",
+      icon: ShoppingBag,
+      active: pathname?.startsWith("/compras"),
+    },
+    {
+      href: "/reportes",
+      label: "Reportes",
+      icon: BarChart3,
+      active: pathname?.startsWith("/reportes"),
     },
     {
       href: "/caja",

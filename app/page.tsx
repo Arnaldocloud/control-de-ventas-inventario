@@ -205,7 +205,8 @@ export default async function HomePage() {
           <CardDescription>Últimas 10 transacciones</CardDescription>
         </CardHeader>
         <CardContent>
-          <VentasRecientes />
+          {/* Corregido: uso de componente asíncrono */}
+          {await VentasRecientes()}
         </CardContent>
       </Card>
     </div>

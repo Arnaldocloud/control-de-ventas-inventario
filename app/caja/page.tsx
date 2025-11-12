@@ -6,6 +6,8 @@ import { CierresTable } from "@/components/cierres-table"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
 
+// Optimización: Revalidar cada 30 segundos
+export const revalidate = 30
 export const dynamic = "force-dynamic"
 
 export default async function CajaPage() {
