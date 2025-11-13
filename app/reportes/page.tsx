@@ -50,7 +50,7 @@ export default async function ReportesPage() {
             <BarChart3 className="h-8 w-8 text-primary" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold">Reportes y Análisis</h1>
+              <h1 className="text-4xl font-bold text-black">Reportes y Análisis</h1>
             <p className="text-muted-foreground mt-2">Visualiza y exporta reportes de tu negocio</p>
           </div>
         </div>

@@ -20,7 +20,7 @@ export default function RegistroPage() {
         </Link>
       </div>
 
-      <div className="w-full max-w-lg space-y-8 py-8">
+      <div className="w-full max-w-lg space-y-2 py-2">
         <div className="text-center space-y-2">
           <h1 className="text-3xl font-bold tracking-tight">Crear Cuenta</h1>
           <p className="text-muted-foreground">Comienza tu prueba gratuita hoy</p>

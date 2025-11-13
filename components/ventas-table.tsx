@@ -49,7 +49,7 @@ export function VentasTable({ ventas }: VentasTableProps) {
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/10 mb-4">
           <ShoppingCart className="h-8 w-8 text-emerald-600" />
         </div>
-        <p className="text-lg font-semibold mb-1">No hay ventas registradas</p>
+  <p className="text-lg font-semibold mb-1 text-primary">No hay ventas registradas</p>
         <p className="text-sm text-muted-foreground">Comienza registrando tu primera venta</p>
       </div>
     )

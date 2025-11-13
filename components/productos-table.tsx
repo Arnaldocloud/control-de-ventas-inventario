@@ -215,7 +215,7 @@ export function ProductosTable({ productos, tasaDolar }: ProductosTableProps) {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
             <Search className="h-8 w-8 text-primary" />
           </div>
-          <p className="text-lg font-semibold mb-1">No se encontraron productos</p>
+          <p className="text-lg font-semibold mb-1 text-primary">No se encontraron productos</p>
           <p className="text-sm text-muted-foreground">No hay productos que coincidan con "{busqueda}"</p>
         </div>
       ) : (

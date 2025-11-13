@@ -25,7 +25,7 @@ export default async function ClientesPage() {
             <Users className="h-8 w-8 text-primary" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold">Gestión de Clientes</h1>
+              <h1 className="text-4xl font-bold text-black">Gestión de Clientes</h1>
             <p className="text-muted-foreground mt-2">Administra tu base de datos de clientes</p>
           </div>
         </div>

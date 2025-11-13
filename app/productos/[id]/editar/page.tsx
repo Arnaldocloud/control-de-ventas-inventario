@@ -25,7 +25,7 @@ export default async function EditarProductoPage({ params }: { params: Promise<{
       <Card>
         <CardHeader>
           <CardTitle>Editar Producto</CardTitle>
-          <CardDescription>Actualiza la información del repuesto</CardDescription>
+          <CardDescription>Actualiza la información del producto</CardDescription>
         </CardHeader>
         <CardContent>
           <ProductoForm 

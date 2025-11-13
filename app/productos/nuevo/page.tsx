@@ -16,7 +16,7 @@ export default async function NuevoProductoPage() {
       <Card>
         <CardHeader>
           <CardTitle>Agregar Nuevo Producto</CardTitle>
-          <CardDescription>Completa la información del repuesto</CardDescription>
+          <CardDescription>Completa la información del producto</CardDescription>
         </CardHeader>
         <CardContent>
           <ProductoForm tasaDolar={config?.tasa_dolar} />

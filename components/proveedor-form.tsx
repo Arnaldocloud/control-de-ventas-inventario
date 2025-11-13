@@ -99,7 +99,7 @@ export function ProveedorForm({ proveedor }: ProveedorFormProps) {
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Información Básica */}
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold">Información Básica</h3>
+  <h3 className="text-lg font-semibold text-primary">Información Básica</h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
@@ -121,7 +121,7 @@ export function ProveedorForm({ proveedor }: ProveedorFormProps) {
               id="empresa"
               value={formData.empresa}
               onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
-              placeholder="Ej: Repuestos XYZ C.A."
+              placeholder="Ej: Proveedor XYZ C.A."
             />
           </div>
 
@@ -160,7 +160,7 @@ export function ProveedorForm({ proveedor }: ProveedorFormProps) {
 
       {/* Dirección */}
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold">Dirección</h3>
+  <h3 className="text-lg font-semibold text-primary">Dirección</h3>
 
         <div className="space-y-2">
           <Label htmlFor="direccion">Dirección</Label>
@@ -208,7 +208,7 @@ export function ProveedorForm({ proveedor }: ProveedorFormProps) {
 
       {/* Notas */}
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold">Notas Adicionales</h3>
+  <h3 className="text-lg font-semibold text-primary">Notas Adicionales</h3>
 
         <div className="space-y-2">
           <Label htmlFor="notas">Notas</Label>

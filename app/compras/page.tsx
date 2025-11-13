@@ -38,7 +38,7 @@ export default async function ComprasPage() {
             <ShoppingBag className="h-8 w-8 text-primary" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold">Gestión de Compras</h1>
+              <h1 className="text-4xl font-bold text-black">Gestión de Compras</h1>
             <p className="text-muted-foreground mt-2">Registra las compras a proveedores</p>
           </div>
         </div>

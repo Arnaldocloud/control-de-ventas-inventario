@@ -230,11 +230,11 @@ export function VentaForm({ productos, tasaDolar }: VentaFormProps) {
     <form onSubmit={handleSubmit} className="space-y-6">
       <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
         <CardHeader>
-          <CardTitle className="text-blue-900">Configuración de Venta</CardTitle>
+          <CardTitle className="text-primary">Configuración de Venta</CardTitle>
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="moneda" className="text-blue-900">
+            <Label htmlFor="moneda" className="text-primary">
               Moneda *
             </Label>
             <Select
@@ -262,7 +262,7 @@ export function VentaForm({ productos, tasaDolar }: VentaFormProps) {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="metodo_pago" className="text-blue-900">
+            <Label htmlFor="metodo_pago" className="text-primary">
               Método de Pago *
             </Label>
             <Select

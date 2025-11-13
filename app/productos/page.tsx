@@ -34,10 +34,8 @@ export default async function ProductosPage() {
             <Package className="h-7 w-7 text-white" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-              Inventario de Productos
-            </h1>
-            <p className="text-muted-foreground mt-1">Gestiona tus repuestos de motos</p>
+              <h1 className="text-4xl font-bold text-black">Inventario de Productos</h1>
+            <p className="text-muted-foreground mt-1">Gestiona tus productos y stock</p>
           </div>
         </div>
         <Link href="/productos/nuevo">

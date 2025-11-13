@@ -147,7 +147,7 @@ Transformar el sistema actual en un **SaaS multi-tenant** listo para comercializ
 ## 📈 Estrategia de Comercialización
 
 ### Mercado Objetivo
-- Pequeñas y medianas tiendas de repuestos
+- Pequeñas y medianas tiendas y comercios
 - Ferreterías
 - Tiendas de autopartes
 - Negocios de retail en Venezuela

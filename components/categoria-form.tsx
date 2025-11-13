@@ -111,7 +111,7 @@ export function CategoriaForm({ categoria, categoriasDisponibles }: CategoriaFor
             id="nombre"
             value={formData.nombre}
             onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-            placeholder="Ej: Repuestos de Motor"
+            placeholder="Ej: Electrónica, Ropa, Alimentos, etc."
             required
           />
         </div>

@@ -52,12 +52,10 @@ export default async function HomePage() {
     <div className="container mx-auto py-8 px-4">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-4xl font-bold">Control de Ventas e Inventario</h1>
-          <p className="text-muted-foreground mt-2">Panel de control de tu tienda de repuestos</p>
+          <h1 className="text-4xl font-bold text-black">Control de Ventas e Inventario</h1>
+          <p className="text-muted-foreground mt-2">Panel de control de tu comercio</p>
         </div>
-        <Link href="/configuracion">
-          <Button variant="outline">Configuración</Button>
-        </Link>
+      
       </div>
 
       {!cajaActiva && (

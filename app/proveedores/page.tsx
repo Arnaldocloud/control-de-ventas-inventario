@@ -25,7 +25,7 @@ export default async function ProveedoresPage() {
             <Truck className="h-8 w-8 text-primary" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold">Gestión de Proveedores</h1>
+              <h1 className="text-4xl font-bold text-black">Gestión de Proveedores</h1>
             <p className="text-muted-foreground mt-2">Administra tus proveedores y distribuidores</p>
           </div>
         </div>

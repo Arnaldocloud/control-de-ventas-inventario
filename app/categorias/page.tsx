@@ -42,7 +42,7 @@ export default async function CategoriasPage() {
             <FolderTree className="h-8 w-8 text-primary" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold">Categorías de Productos</h1>
+              <h1 className="text-4xl font-bold text-black">Categorías de Productos</h1>
             <p className="text-muted-foreground mt-2">Organiza tus productos en categorías y subcategorías</p>
           </div>
         </div>

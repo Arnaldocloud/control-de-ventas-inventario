@@ -20,7 +20,7 @@ export default async function ConfiguracionPage() {
     <div className="container mx-auto py-8 px-4 max-w-2xl">
       <Card>
         <CardHeader>
-          <CardTitle>Configuración del Sistema</CardTitle>
+            <CardTitle>Configuración del Sistema</CardTitle>
           <CardDescription>Actualiza la tasa del dólar y otros parámetros</CardDescription>
         </CardHeader>
         <CardContent>

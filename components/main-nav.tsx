@@ -72,38 +72,38 @@ export function MainNav() {
   ]
 
   return (
-    <nav className="border-b bg-card shadow-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center">
-          <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 p-2 group-hover:scale-105 transition-transform">
-                <Package className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-bold text-xl bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-                MotoRepuestos73
-              </span>
-            </Link>
-            <div className="flex gap-1">
-              {routes.map((route) => (
-                <Link
-                  key={route.href}
-                  href={route.href}
-                  className={cn(
-                    "flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all",
-                    route.active
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
-                  )}
-                >
-                  <route.icon className="h-4 w-4" />
-                  {route.label}
-                </Link>
-              ))}
-            </div>
-          </div>
+    <aside className="fixed left-0 top-0 h-screen w-64 bg-card shadow-lg z-50 flex flex-col border-r">
+      <div className="flex items-center gap-2 px-6 py-6">
+        <div className="rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 p-2">
+          <Package className="h-6 w-6 text-white" />
         </div>
+        <span className="font-bold text-2xl bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+          ComercioApp
+        </span>
       </div>
-    </nav>
+      <nav className="flex-1 px-2 py-4 flex flex-col gap-1">
+        {routes.map((route) => (
+          <Link
+            key={route.href}
+            href={route.href}
+            className={cn(
+              "flex items-center gap-3 px-4 py-3 text-base font-bold rounded-lg transition-all",
+              route.active
+                ? "bg-primary text-primary-foreground shadow-sm"
+                : "text-black hover:bg-accent hover:text-black",
+            )}
+          >
+            <route.icon className="h-5 w-5" />
+            <span
+              className={cn(
+                route.active ? "text-white" : "text-black"
+              )}
+            >
+              {route.label}
+            </span>
+          </Link>
+        ))}
+      </nav>
+    </aside>
   )
 }

@@ -33,7 +33,7 @@ export default async function CajaPage() {
   return (
     <div className="container mx-auto py-8 space-y-8">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Control de Caja</h1>
+    <h1 className="text-3xl font-bold tracking-tight text-black">Control de Caja</h1>
         <p className="text-muted-foreground">Gestiona la apertura y cierre de caja diario</p>
       </div>
 
